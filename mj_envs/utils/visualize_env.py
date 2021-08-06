@@ -22,7 +22,7 @@ USAGE:\n
 @click.option('--policy', type=str, help='absolute path of the policy file', default=None)
 @click.option('--mode', type=str, help='exploration or evaluation mode for policy', default='evaluation')
 @click.option('--seed', type=int, help='seed for generating environment instances', default=123)
-@click.option('--episodes', type=int, help='number of episodes to visualize', default=10)
+@click.option('--episodes', type=int, help='number of episodes to visualize', default=2)
 
 def main(env_name, policy, mode, seed, episodes):
     e = GymEnv(env_name)

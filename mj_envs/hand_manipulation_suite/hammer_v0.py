@@ -40,6 +40,9 @@ class HammerEnvV0(mujoco_env.MujocoEnv, utils.EzPickle):
             a = self.act_mid + a * self.act_rng  # mean center and scale
         except:
             a = a  # only for the initialization phase
+        a[5] = 0
+        a[6] = 0
+        a[7] = 0
         self.do_simulation(a, self.frame_skip)
         ob = self.get_obs()
         obj_pos = self.data.body_xpos[self.obj_bid].ravel()
