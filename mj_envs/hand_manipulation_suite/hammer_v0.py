@@ -4,6 +4,7 @@ from mjrl.envs import mujoco_env
 from mujoco_py import MjViewer
 from mj_envs.utils.quatmath import *
 import os
+import mujoco_py
 
 ADD_BONUS_REWARDS = True
 
@@ -43,6 +44,36 @@ class HammerEnvV0(mujoco_env.MujocoEnv, utils.EzPickle):
         a[5] = 0
         a[6] = 0
         a[7] = 0
+
+#         qpos = [-1.08395366e-01, -8.61610663e-04, -1.74799641e-01, -5.17733132e-02,
+#  -2.35464336e-04,  8.51813949e-03,  7.66294756e-03,  7.71110958e-03,
+#   1.98648469e-04,  8.10292036e-01,  8.00413097e-01,  8.00432757e-01,
+#   3.80358878e-03,  7.38452214e-01,  7.48875366e-01,  7.74608167e-01,
+#   3.98107122e-01, -6.88627580e-03,  8.60622812e-01,  8.18404901e-01,
+#   7.99360197e-01, -5.43019268e-03,  6.79864938e-01,  1.80767723e-02,
+#   5.10429140e-03, -7.82594697e-01, -3.79621326e-21, -5.67412386e-04,
+#  -4.73306750e-01, -1.52438697e-04,  9.47859512e-04, -1.02599300e-05,
+#   2.76621992e-02, -9.75842984e-01,  3.45984479e-01,  4.14758417e-01,
+#   2.20583496e-02, -4.16870713e-02, -1.00755453e-01]
+        
+#         qpos0 = [0 for i in range(38)]
+#         qpos1 = [-1.02599300e-05, 2.76621992e-02, -9.75842984e-01,  3.45984479e-01,  4.14758417e-01,
+#   2.20583496e-02, -4.16870713e-02, -1.00755453e-01]
+#         qpos = qpos0 + qpos1
+
+#         old_state = self.sim.get_state()
+#         new_state = mujoco_py.MjSimState(old_state.time, qpos, old_state[2],
+#                                          old_state.act, old_state.udd_state)
+#         self.sim.set_state(new_state)
+#         self.sim.forward()
+        # print(a)
+        # print(self.model.actuator_forcelimited)
+        # print(self.model.actuator_gainprm[0])
+        # print(self.model.actuator_biasprm[0])
+        # print(self.data.actuator_length)
+        # # print(self.model.actuator_lengthrange)
+        # print(self.data.actuator_force)
+        # print("\n\n")
         self.do_simulation(a, self.frame_skip)
         ob = self.get_obs()
         obj_pos = self.data.body_xpos[self.obj_bid].ravel()

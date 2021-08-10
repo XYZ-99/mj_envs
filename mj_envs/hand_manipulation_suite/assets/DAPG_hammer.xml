@@ -26,6 +26,7 @@
     </default>
 
     <asset>
+        <!-- ======= Mug ======= -->
 		<mesh scale="2 2 2" name="urdf_convex_piece_0" file="mug/urdf_convex_piece_0.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_1" file="mug/urdf_convex_piece_1.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_2" file="mug/urdf_convex_piece_2.stl" />
@@ -39,6 +40,23 @@
         <mesh scale="2 2 2" name="urdf_convex_piece_10" file="mug/urdf_convex_piece_10.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_11" file="mug/urdf_convex_piece_11.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_12" file="mug/urdf_convex_piece_12.stl" />
+        <!-- ======= Scissors ======= -->
+        <mesh scale="2 2 2" name="link_1_piece_0" file="scissors/objs/link_1_piece_0.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_1" file="scissors/objs/link_1_piece_1.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_2" file="scissors/objs/link_1_piece_2.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_3" file="scissors/objs/link_1_piece_3.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_4" file="scissors/objs/link_1_piece_4.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_5" file="scissors/objs/link_1_piece_5.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_6" file="scissors/objs/link_1_piece_6.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_7" file="scissors/objs/link_1_piece_7.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_8" file="scissors/objs/link_1_piece_8.stl" />
+        <mesh scale="2 2 2" name="link_1_piece_9" file="scissors/objs/link_1_piece_9.stl" />
+        <mesh scale="2 2 2" name="link_0_piece_0" file="scissors/objs/link_0_piece_0.stl" />
+        <mesh scale="2 2 2" name="link_0_piece_1" file="scissors/objs/link_0_piece_1.stl" />
+        <mesh scale="2 2 2" name="link_0_piece_2" file="scissors/objs/link_0_piece_2.stl" />
+        <mesh scale="2 2 2" name="link_0_piece_3" file="scissors/objs/link_0_piece_3.stl" />
+        <mesh scale="2 2 2" name="link_0_piece_4" file="scissors/objs/link_0_piece_4.stl" />
+        <mesh scale="2 2 2" name="link_0_piece_5" file="scissors/objs/link_0_piece_5.stl" />
     </asset>
 
     <!-- ======= CONTACTS ======= -->
@@ -116,7 +134,8 @@
             <site name="tool" pos="-0.2 0 -0.04" size="0.01" group="4" rgba="0.4 0.8 0.4 1" />
         </body>
 
-        <body name="Mug" pos="0 -0.1 0.2" quat="0.707388 0.706825 0 0">
+        <!-- ======= Mug ======= -->
+        <!-- <body name="Mug" pos="0 -0.1 0.2" quat="0.707388 0.706825 0 0">
             <inertial pos="0 0 0" mass="0.512" diaginertia="0.00110933 0.00110933 0.00218453" />
             <joint name="mugRx" pos="0 0 0" axis="1 0 0" limited="false" damping="0.1" />
             <joint name="mugRy" pos="0 0 0" axis="0 1 0" limited="false" damping="0.1" />
@@ -137,6 +156,53 @@
             <geom type="mesh" rgba="0.75 0.75 0.75 1" mesh="urdf_convex_piece_10" />
             <geom type="mesh" rgba="0.75 0.75 0.75 1" mesh="urdf_convex_piece_11" />
             <geom type="mesh" rgba="0.75 0.75 0.75 1" mesh="urdf_convex_piece_12" />
+        </body> -->
+
+        <!-- ======= Scissors ======= -->
+        <body name="Scissors" pos="0 -0.1 0.2" quat="0.707388 0.706825 0 0">
+            <inertial pos="0 0 0" mass="0.512" diaginertia="0.00110933 0.00110933 0.00218453" />
+            <joint name="sciRx" pos="0 0 0" axis="1 0 0" limited="false" damping="0.1" />
+            <joint name="sciRy" pos="0 0 0" axis="0 1 0" limited="false" damping="0.1" />
+            <joint name="sciRz" pos="0 0 0" axis="0 0 1" limited="false" damping="0.1" />
+            <joint name="sciTx" pos="0 0 0" axis="1 0 0" type="slide" limited="false" damping="0" />
+            <joint name="sciTy" pos="0 0 0" axis="0 1 0" type="slide" limited="false" damping="0" />
+            <joint name="sciTz" pos="0 0 0" axis="0 0 1" type="slide" limited="false" damping="0" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="link_0_piece_0" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="link_0_piece_1" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="link_0_piece_2" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="link_0_piece_3" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="link_0_piece_4" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="link_0_piece_5" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_0_piece_0" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_0_piece_1" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_0_piece_2" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_0_piece_3" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_0_piece_4" />
+            <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_0_piece_5" />
+            <body name="link_1" pos="-0.000986079 -0.000550099 0.00139311" quat="0.5 0.5 -0.5 -0.5">
+                <inertial pos="0.00333595 -0.0020511 -0.00451426" quat="0.474124 0.524601 0.524601 0.474124" mass="0.00303" diaginertia="3.65167e-06 3.65167e-06 3.65167e-06" />
+                <joint name="joint_1" pos="0 0 0" axis="0 1 0" limited="true" range="0 1.6" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_0" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_1" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_2" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_3" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_4" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_5" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_6" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_7" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_8" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" mesh="link_1_piece_9" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_0" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_1" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_2" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_3" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_4" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_5" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_6" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_7" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_8" />
+                <geom pos="-0.000550099 -0.00139311 -0.000986079" type="mesh" contype="0" conaffinity="0" group="1" mesh="link_1_piece_9" />
+            </body>
         </body>
 
     </worldbody>
