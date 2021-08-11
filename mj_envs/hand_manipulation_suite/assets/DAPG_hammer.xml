@@ -27,7 +27,7 @@
 
     <asset>
         <!-- ======= Mug ======= -->
-		<mesh scale="2 2 2" name="urdf_convex_piece_0" file="mug/urdf_convex_piece_0.stl" />
+		<!-- <mesh scale="2 2 2" name="urdf_convex_piece_0" file="mug/urdf_convex_piece_0.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_1" file="mug/urdf_convex_piece_1.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_2" file="mug/urdf_convex_piece_2.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_3" file="mug/urdf_convex_piece_3.stl" />
@@ -39,7 +39,7 @@
         <mesh scale="2 2 2" name="urdf_convex_piece_9" file="mug/urdf_convex_piece_9.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_10" file="mug/urdf_convex_piece_10.stl" />
         <mesh scale="2 2 2" name="urdf_convex_piece_11" file="mug/urdf_convex_piece_11.stl" />
-        <mesh scale="2 2 2" name="urdf_convex_piece_12" file="mug/urdf_convex_piece_12.stl" />
+        <mesh scale="2 2 2" name="urdf_convex_piece_12" file="mug/urdf_convex_piece_12.stl" /> -->
         <!-- ======= Scissors ======= -->
         <mesh scale="2 2 2" name="link_1_piece_0" file="scissors/objs/link_1_piece_0.stl" />
         <mesh scale="2 2 2" name="link_1_piece_1" file="scissors/objs/link_1_piece_1.stl" />
@@ -57,17 +57,33 @@
         <mesh scale="2 2 2" name="link_0_piece_3" file="scissors/objs/link_0_piece_3.stl" />
         <mesh scale="2 2 2" name="link_0_piece_4" file="scissors/objs/link_0_piece_4.stl" />
         <mesh scale="2 2 2" name="link_0_piece_5" file="scissors/objs/link_0_piece_5.stl" />
+        <!-- <mesh class="scissors" name="link_1_piece_0" file="scissors/objs/link_1_piece_0.stl" />
+        <mesh class="scissors" name="link_1_piece_1" file="scissors/objs/link_1_piece_1.stl" />
+        <mesh class="scissors" name="link_1_piece_2" file="scissors/objs/link_1_piece_2.stl" />
+        <mesh class="scissors" name="link_1_piece_3" file="scissors/objs/link_1_piece_3.stl" />
+        <mesh class="scissors" name="link_1_piece_4" file="scissors/objs/link_1_piece_4.stl" />
+        <mesh class="scissors" name="link_1_piece_5" file="scissors/objs/link_1_piece_5.stl" />
+        <mesh class="scissors" name="link_1_piece_6" file="scissors/objs/link_1_piece_6.stl" />
+        <mesh class="scissors" name="link_1_piece_7" file="scissors/objs/link_1_piece_7.stl" />
+        <mesh class="scissors" name="link_1_piece_8" file="scissors/objs/link_1_piece_8.stl" />
+        <mesh class="scissors" name="link_1_piece_9" file="scissors/objs/link_1_piece_9.stl" />
+        <mesh class="scissors" name="link_0_piece_0" file="scissors/objs/link_0_piece_0.stl" />
+        <mesh class="scissors" name="link_0_piece_1" file="scissors/objs/link_0_piece_1.stl" />
+        <mesh class="scissors" name="link_0_piece_2" file="scissors/objs/link_0_piece_2.stl" />
+        <mesh class="scissors" name="link_0_piece_3" file="scissors/objs/link_0_piece_3.stl" />
+        <mesh class="scissors" name="link_0_piece_4" file="scissors/objs/link_0_piece_4.stl" />
+        <mesh class="scissors" name="link_0_piece_5" file="scissors/objs/link_0_piece_5.stl" /> -->
     </asset>
 
     <!-- ======= CONTACTS ======= -->
-    <contact>
+    <!-- <contact>
         <exclude body1='nail_board' body2='nail'/>
-    </contact>
+    </contact> -->
 
     <!-- ======= SENSORS ======= -->
-    <sensor>
+    <!-- <sensor>
         <touch site="S_target" name="S_nail" />
-    </sensor>
+    </sensor> -->
 
     <!-- ======= WORLD ======= -->
     <worldbody>
@@ -98,6 +114,7 @@
             <inertial pos="0.001 -0.002 0.29" quat="0.982037 -0.0160006 0 -0.188007" mass="4" diaginertia="0.01 0.01 0.0075" />
             <joint name="ARRx" pos="0 0 0" axis="1 0 0" range="-0.4 0.25" damping="20" />
             <joint name="ARRy" pos="0 0 0" axis="0 1 0" range="-0.3 0.3" damping="20" />
+            <joint name="ARRz" pos="0 0 0" axis="0 0 1" range="-1 1" damping="20" />
             <geom name="V_forearm" class="D_Vizual" pos="0 -.01 .181" euler="0 0 -1.57"  mesh="forearm_simple" />
             <geom name="C_forearm1" class="DC_Hand" size="0.05 0.033" pos="0 0 0.29" type="capsule" rgba="0.4 0.5 0.6 0.1" />
             
@@ -106,7 +123,7 @@
         </body>
 
         <!-- ======= Nail ======= -->
-        <body name="nail_board" pos="0.3 0 0.185245" quat="0.583833 0.583368 -0.399421 -0.399104" user="1001 0 2002 0.05 0 0.1 0.05 0 0.25">
+        <!-- <body name="nail_board" pos="0.3 0 0.185245" quat="0.583833 0.583368 -0.399421 -0.399104" user="1001 0 2002 0.05 0 0.1 0.05 0 0.25">
             <inertial pos="0 0 0" mass="0.512" diaginertia="0.00110933 0.00110933 0.00218453" />
             <geom name="board" class="board" size="0.08 0.08 0.01" />
             <site name="nail_goal" pos="0 0 0.01" size="0.034 0.005" type="cylinder" material="MatWood" rgba="1 0.8 0.8 1" />
@@ -117,10 +134,10 @@
                 <geom size="0.01 0.05" pos="0 0 0.05" type="cylinder" material="MatFoil" />
                 <site name="S_target" pos="0 0 0.101" size="0.034 0.005" type="cylinder" rgba="0 1 0 0.2" />
             </body>
-        </body>
+        </body> -->
 
         <!-- ======= Hammer ======= -->
-        <body name="Object" pos="0.4 -0.2 0.5" quat="0.707388 0.706825 0 0">
+        <!-- <body name="Object" pos="0.4 -0.2 0.5" quat="0.707388 0.706825 0 0">
             <inertial pos="-0.11025 0 0" quat="0.50001 0.49999 0.49999 0.50001" mass="0.253442" diaginertia="0.00349644 0.00345287 8.947e-05" />
             <joint name="OBJTx" pos="0 0 0" axis="1 0 0" type="slide" limited="false" damping="0" />
             <joint name="OBJTy" pos="0 0 0" axis="0 1 0" type="slide" limited="false" damping="0" />
@@ -132,7 +149,7 @@
             <geom name="neck" size="0.007 0.085" pos="-0.14 0 0" quat="0.707388 0 0.706825 0" type="capsule" condim="4" rgba="1 1 1 1" />
             <geom name="head" size="0.02 0.04" pos="-0.24 0 0" type="cylinder" condim="4" rgba="0.4 0.4 0.4 1" />
             <site name="tool" pos="-0.2 0 -0.04" size="0.01" group="4" rgba="0.4 0.8 0.4 1" />
-        </body>
+        </body> -->
 
         <!-- ======= Mug ======= -->
         <!-- <body name="Mug" pos="0 -0.1 0.2" quat="0.707388 0.706825 0 0">
@@ -159,7 +176,7 @@
         </body> -->
 
         <!-- ======= Scissors ======= -->
-        <body name="Scissors" pos="0 -0.1 0.2" quat="0.707388 0.706825 0 0">
+        <body name="Scissors" childclass="scissors" pos="0 -0.1 0.2" quat="0.707388 0.706825 0 0">
             <inertial pos="0 0 0" mass="0.512" diaginertia="0.00110933 0.00110933 0.00218453" />
             <joint name="sciRx" pos="0 0 0" axis="1 0 0" limited="false" damping="0.1" />
             <joint name="sciRy" pos="0 0 0" axis="0 1 0" limited="false" damping="0.1" />
@@ -209,8 +226,12 @@
 
     
     <actuator>
-        <general name="A_ARRx" joint="ARRx" ctrlrange="-.4 .25" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" user="1002 0 2001 -0.02 0.02 0 0 0 0 0 0 0 0 0 0 0"/>
+        <!-- <general name="A_ARRx" joint="ARRx" ctrlrange="-.4 .25" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" user="1002 0 2001 -0.02 0.02 0 0 0 0 0 0 0 0 0 0 0"/>
         <general name="A_ARRy" joint="ARRy" ctrlrange="-0.3 0.3" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0"/>
+        <general name="A_ARRz" joint="ARRz" ctrlrange="-1 1.0" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" /> -->
+        <position name="A_ARRx" joint="ARRx" ctrlrange="-.4 .25" />
+        <position name="A_ARRy" joint="ARRy" ctrlrange="-0.3 0.3" />
+        <position name="A_ARRz" joint="ARRz" ctrlrange="-1 1.0" />
     </actuator>
     <include file='DAPG_assets.xml'/>
 </mujoco>
